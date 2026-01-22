@@ -138,7 +138,7 @@ For commercial licensing of premium features, contact [ethcal@algoraz.com](mailt
 
 ```
 Algoraz. (2024). Ethiopian Calendar Engine [Computer software].
-https://github.com/algoraz/ethiopian-calendar-engine
+https://github.com/abrishwo/ethiopian-calendar.git
 ```
 
 ## 🌍 Cultural Impact
@@ -160,7 +160,7 @@ This engine serves as a **digital public good** for:
 ### Development
 
 ```bash
-git clone https://github.com/algoraz/ethiopian-calendar-engine
+git clone git@github.com:abrishwo/Ethiopian-calendar.git
 cd ethiopian-calendar-engine
 npm install
 npm run demo  # Run demonstration
