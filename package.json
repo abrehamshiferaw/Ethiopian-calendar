@@ -1,0 +1,42 @@
+{
+  "name": "ethiopian-calendar-engine",
+  "version": "1.0.0",
+  "description": "Complete Ethiopian calendar engine with ecclesiastical feast calculations, localization, and Gregorian bridge",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "demo": "npm run build && node dist/demo.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ethiopian",
+    "calendar",
+    "orthodox",
+    "church",
+    "feasts",
+    "localization",
+    "typescript",
+    "astronomical"
+  ],
+  "author": "Algoraz <ethcal@algoraz.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algoraz/ethiopian-calendar-engine"
+  },
+  "homepage": "https://algoraz.com/ethiopian-calendar",
+  "bugs": {
+    "url": "https://github.com/algoraz/ethiopian-calendar-engine/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
+
