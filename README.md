@@ -1,177 +1,59 @@
 # Ethiopian Calendar Engine
 
-[![npm version](https://badge.fury.io/js/ethiopian-calendar-engine.svg)](https://badge.fury.io/js/ethiopian-calendar-engine)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+An open-source **Ethiopian calendar engine** for Ethiopian–Gregorian date conversion, Amharic localization, Ethiopic numerals, Ethiopian holidays, ecclesiastical calculations, and JavaScript/TypeScript applications.
 
-Complete Ethiopian calendar engine with ecclesiastical feast calculations, localization, and Gregorian bridge.
+[![npm version](https://badge.fury.io/js/ethiopian-calendar-engine.svg)](https://www.npmjs.com/package/ethiopian-calendar-engine) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## ✨ Features
+<p><a href="https://github.com/sponsors/abrehamshiferaw">💖 Sponsor Ethiopian Calendar</a></p>
 
-- **Phase 1**: Pure Ethiopian date arithmetic and conversions
-- **Phase 2**: Gregorian ↔ Ethiopian bridge layer
-- **Phase 3**: Ecclesiastical cycles (Wenber, Abekti, Metq) and movable feasts
-- **Phase 4**: Localization, fixed holidays, chronology, and public API
-- **Phase 5**: SaaS platform, monetization, governance & trust layer
+## Why support this project?
 
-## 📦 Installation
+Sponsorship helps fund accurate calendar rules, test coverage, documentation, localization, release maintenance, and accessible Ethiopian cultural technology for developers, educators, institutions, and the Ethiopian diaspora.
+
+## Features
+
+- Ethiopian date arithmetic and Gregorian ↔ Ethiopian conversion
+- Amharic localization and Ethiopic numeral formatting
+- Fixed holidays and movable ecclesiastical feasts
+- Ethiopian year metadata and leap-year calculations
+- TypeScript API for web, mobile, backend, and calendar integrations
+- Auditable, versioned open-source calendar mathematics
+
+## Installation
 
 ```bash
 npm install ethiopian-calendar-engine
 ```
 
-## 🚀 Quick Start
+## Quick start
 
 ```typescript
 import { EthiopianCalendar } from 'ethiopian-calendar-engine';
 
-// Get today's Ethiopian date
 const today = EthiopianCalendar.today();
 console.log(EthiopianCalendar.format(today));
-// Output: ፲፬ ጥር 2018
 
-// Convert Gregorian to Ethiopian
-const ethDate = EthiopianCalendar.fromGregorian(2023, 1, 1);
-console.log(EthiopianCalendar.format(ethDate));
-// Output: ፳፫ ታኅሣሥ 2015
+const date = EthiopianCalendar.fromGregorian(2023, 1, 1);
+console.log(EthiopianCalendar.format(date));
 
-// Get all holidays for a year
 const holidays = EthiopianCalendar.getAllHolidays(2018);
-console.log(`Total holidays in 2018: ${holidays.length}`);
-
-// Calculate movable feasts
 const feasts = EthiopianCalendar.getMovableFeasts(2018);
-console.log(feasts);
-// Output: { ነነዌ: {...}, ዐቢይ ጾም: {...}, ... }
 ```
 
-## 📚 API Reference
+## API
 
-### Core Functions
+- `today()` — current Ethiopian date (UTC)
+- `fromGregorian(year, month, day)` — convert a Gregorian date
+- `format(date)` — format with localization
+- `getYearInfo(year)` — return Ethiopian year metadata
+- `getAllHolidays(year)` — return holidays for a year
+- `getMovableFeasts(year)` — calculate movable feasts
+- `isLeapYear(year)` — check leap-year status
 
-- `EthiopianCalendar.today()`: Get current Ethiopian date (UTC)
-- `EthiopianCalendar.fromGregorian(year, month, day)`: Convert Gregorian to Ethiopian
-- `EthiopianCalendar.format(date)`: Format date with Amharic localization
-- `EthiopianCalendar.getYearInfo(am)`: Get year metadata (leap, evangelist)
-- `EthiopianCalendar.getAllHolidays(am)`: Get all holidays for year
-- `EthiopianCalendar.getMovableFeasts(am)`: Calculate ecclesiastical feasts
-- `EthiopianCalendar.isLeapYear(am)`: Check if leap year
+## Contributing and sponsorship
 
-### Localization
+Contributions from calendar researchers, Ethiopian language specialists, developers, educators, and institutions are welcome. Please open an issue or pull request, and [sponsor the Ethiopian Calendar project](https://github.com/sponsors/abrehamshiferaw) to support long-term maintenance.
 
-Default Amharic locale with Ethiopic numerals. Extensible for other languages.
+## License
 
-### Ecclesiastical Features
-
-- Wenber calculation (19-year Metonic cycle)
-- Abekti/Metq lunar phase approximation
-- Movable feasts: Nenewe, Abiy Tsom, Hosanna, Tinseae (Easter), Erget
-- Evangelist cycle (28-year rotation)
-
-## 🏛️ Governance & Trust
-
-### Calendar Advisory Board
-
-- **Ethiopian Orthodox Church** scholars
-- **Astronomers** and **mathematicians**
-- **Software engineers** specializing in calendrical calculations
-
-### Transparency
-
-- All core mathematics are **open-source** and auditable
-- Versioned releases with immutable calendar rules
-- Comprehensive documentation of ecclesiastical rules
-
-### Verification
-
-```typescript
-// Get calculation proof for transparency
-const proof = {
-  wenber: calculateWenber(2018),    // 12
-  abekti: calculateAbekti(12),      // 12
-  metq: calculateMetq(12),          // 18
-  sum: 12 + 18                      // 30 (always)
-};
-```
-
-## 💎 Premium SaaS (algoraz.com)
-
-For high-volume applications, government systems, and institutional use:
-
-- **High-volume API access** (REST endpoints)
-- **Historical validation tables** (canonical Easter dates)
-- **Multi-calendar synchronization**
-- **Official certification endpoints**
-- **Government-grade SLAs**
-
-### API Endpoints
-
-```
-GET /api/v1/today
-GET /api/v1/convert/gregorian?year=2023&month=1&day=1
-GET /api/v1/holidays/2018
-GET /api/v1/verify/2018-05-14
-```
-
-### Pricing Tiers
-
-| Tier       | Requests/Day | SLA | Support |
-|------------|-------------|-----|---------|
-| Free       | 1,000      | -   | Community |
-| Pro        | 100,000    | 99.9% | Email |
-| Enterprise | Unlimited  | 99.99% | Phone + On-site |
-
-## 📜 License
-
-**MIT License** - Core mathematics are open-source.
-
-For commercial licensing of premium features, contact [ethcal@algoraz.com](mailto:ethcal@algoraz.com).
-
-## 🎓 Academic & Institutional Use
-
-### References
-
-- Ethiopian Orthodox Church liturgical calendar
-- 19-year Metonic cycle mathematics
-- Astronomical approximations for lunar phases
-
-### Citation
-
-```
-Algoraz. (2024). Ethiopian Calendar Engine [Computer software].
-https://github.com/abrishwo/ethiopian-calendar.git
-```
-
-## 🌍 Cultural Impact
-
-This engine serves as a **digital public good** for:
-
-- **Government calendars** in Ethiopia
-- **Church administration** worldwide
-- **Educational institutions** teaching Ethiopian history
-- **Cultural preservation** of traditional timekeeping
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Submit pull request
-4. Join the Calendar Advisory Board for rule changes
-
-### Development
-
-```bash
-git clone git@github.com:abrishwo/Ethiopian-calendar.git
-cd ethiopian-calendar-engine
-npm install
-npm run demo  # Run demonstration
-```
-
-## 📞 Contact
-
-- **Website**: [algoraz.com/ethiopian-calendar](https://algoraz.com/ethiopian-calendar)
-- **Email**: [ethcal@algoraz.com](mailto:ethcal@algoraz.com)
-- **GitHub**: [github.com/algoraz/ethiopian-calendar-engine](https://github.com/algoraz/ethiopian-calendar-engine)
-
----
-
-**Built with ❤️ for the Ethiopian diaspora and global scholarly community.**
+MIT License. The core calendar mathematics are open source.
